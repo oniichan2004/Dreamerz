@@ -1,0 +1,71 @@
+:root {
+  --brand-gradient: linear-gradient(
+    90deg,
+    #84fad5 0%,
+    #e9c6ff 50%,
+    #f8ed84 100%
+  );
+}
+
+/* ---------- comun ---------- */
+#btn-outline,
+#btn-solid {
+  height: 50px;
+  width: 200px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    filter 0.2s;
+}
+
+/* ---------- Log In: inel gradient, interior transparent ---------- */
+#btn-outline {
+  position: relative;
+  background: transparent;
+  color: #fff;
+  font-weight: 400;
+}
+
+#btn-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: var(--brand-gradient);
+  pointer-events: none;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+#btn-outline:hover {
+  color: #000;
+  background: var(--brand-gradient);
+}
+
+/* ---------- Sign Up: umplut ---------- */
+#btn-solid {
+  background: var(--brand-gradient);
+  color: #000;
+  font-weight: 700;
+}
+
+#btn-solid:hover {
+  filter: brightness(1.05);
+}

@@ -17,7 +17,7 @@
    fiecare prag suprascrie pe cel dinainte, fără goluri posibile. */
 .dz-wrap {
   position: relative;
-  width: min(300px, calc(100vw - 48px));
+  width: min(240px, calc(100vw - 48px));
   aspect-ratio: 420 / 430;
 }
 
@@ -34,7 +34,7 @@
   left: 0;
   width: 420px;
   height: 430px;
-  transform: scale(calc(min(300px, calc(100vw - 48px)) / 420px));
+  transform: scale(calc(min(240px, calc(100vw - 48px)) / 420px));
   transform-origin: top left;
   font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", sans-serif;
@@ -46,44 +46,44 @@
 /* sm: ≥640px */
 @media (min-width: 640px) {
   .dz-wrap {
-    width: min(380px, calc(100vw - 64px));
+    width: min(300px, calc(100vw - 64px));
   }
 
   .dz {
-    transform: scale(calc(min(380px, calc(100vw - 64px)) / 420px));
+    transform: scale(calc(min(300px, calc(100vw - 64px)) / 420px));
   }
 }
 
 /* md: ≥768px */
 @media (min-width: 768px) {
   .dz-wrap {
-    width: 460px;
+    width: 360px;
   }
 
   .dz {
-    transform: scale(calc(460px / 420px));
+    transform: scale(calc(360px / 420px));
   }
 }
 
 /* lg: ≥1024px */
 @media (min-width: 1024px) {
   .dz-wrap {
-    width: 560px;
+    width: 440px;
   }
 
   .dz {
-    transform: scale(calc(560px / 420px));
+    transform: scale(calc(440px / 420px));
   }
 }
 
 /* xl: ≥1280px, crește fluid până la un plafon */
 @media (min-width: 1280px) {
   .dz-wrap {
-    width: clamp(780px, 46vw, 1050px);
+    width: clamp(620px, 36vw, 840px);
   }
 
   .dz {
-    transform: scale(calc(clamp(780px, 46vw, 1050px) / 420px));
+    transform: scale(calc(clamp(620px, 36vw, 840px) / 420px));
   }
 }
 

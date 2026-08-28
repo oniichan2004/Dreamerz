@@ -30,7 +30,7 @@ export default function Header() {
       <div className="text-white">
         <Link href="/">
           <Image
-            src="/shoting-star.png"
+            src="/shooting-star.png"
             alt="shooting-star"
             width={200}
             height={40}

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Caveat } from "next/font/google";
+import { Geist, Geist_Mono, Caveat , Poppins,Space_Grotesk} from "next/font/google";
 import Header from "../components/core/header";
 import Footer from "../components/core/footer";
 import "./globals.css";
@@ -20,7 +20,18 @@ const caveat = Caveat({
   subsets: ["latin"],
   display: "swap",
 });
+const poppins = Poppins({
+  weight: ["400", "600", "700"],
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  display: "swap",
+});
 
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+});
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
@@ -33,7 +44,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#17142c",
-  colorScheme: "dark",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -44,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} ${poppins.variable} ${spaceGrotesk.variable}`}
     >
       <body className="flex min-h-dvh flex-col antialiased">
         <Header />

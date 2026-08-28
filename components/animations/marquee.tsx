@@ -32,7 +32,7 @@ export default function Marquee({
 
 <div className={`marquee marquee--${direction}`}>
 {[...ITEMS,...ITEMS].map((item,i) => (
-    <Text className="rounded-xl bg-white px-9 py-8 font-semibold  text-2xl whitespace-nowrap"
+    <Text className="   rounded-xl text-md px-4 py-5 bg-white md:px-9 md:py-8 font-semibold  md:text-2xl whitespace-nowrap"
     key={i}>
 
         {item}

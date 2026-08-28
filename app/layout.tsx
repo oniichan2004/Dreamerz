@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono ,Caveat} from "next/font/google";
-import Header from "./components/core/header";
-import Footer from "./components/core/footer";
+import { Geist, Geist_Mono, Caveat } from "next/font/google";
+import Header from "../components/core/header";
+import Footer from "../components/core/footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,7 +20,6 @@ const caveat = Caveat({
   subsets: ["latin"],
   display: "swap",
 });
-
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -43,7 +42,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable}`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable}`}
+    >
       <body className="flex min-h-dvh flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>

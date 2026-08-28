@@ -1,0 +1,16 @@
+.btn-login {
+  position :relative;
+}
+.btn-login::before{
+content:"";
+position:absolute;
+inset:0;
+padding:1px;
+border-radius: inherit;
+background: linear-gradient(90deg, #84fad5, #e9c6ff, #f8ed84);
+mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+mask-composite: exclude;
+-webkit-mask-composite: xor;
+pointer-events: none;
+}

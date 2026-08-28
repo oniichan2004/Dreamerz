@@ -1,8 +1,8 @@
-import Hero from "./components/core/hero-section";
+import Hero from "../components/core/hero-section";
 export default function Home() {
   return (
     <div>
-     <Hero/>
+      <Hero />
     </div>
   );
 }

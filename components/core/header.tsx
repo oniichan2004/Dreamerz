@@ -31,7 +31,7 @@ export default function Header() {
         <Link href="/">
           <Image
             src="/shooting-star.png"
-            alt="shooting-star"
+            alt="Logo"
             width={200}
             height={40}
             className={`brightness-0 ${scrolled ? "w-24 sm:w-50" : "w-32 sm:w-50 invert"}`}

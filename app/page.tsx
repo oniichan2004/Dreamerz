@@ -2,6 +2,8 @@ import Hero from "../components/core/hero-section";
 import Choose from "@/components/sections/ choosing";
 import Inspiration from "@/components/sections/inspiration";
 import HowItWorks from "@/components/sections/how-it-works";
+import FulfillTheirDreams from "@/components/sections/fulfill-their-dreams";
+
 export default function Home() {
   return (
     <div>
@@ -9,6 +11,7 @@ export default function Home() {
       <Choose/>
       <Inspiration/>
 <HowItWorks/>
+<FulfillTheirDreams/>
     </div>
   );
 }

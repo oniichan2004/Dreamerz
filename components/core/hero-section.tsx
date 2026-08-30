@@ -4,7 +4,6 @@ import "../styles/buttons.css";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
-
 import { Text } from "../ui/text";
 export default function Hero() {
   return (

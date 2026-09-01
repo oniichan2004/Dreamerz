@@ -1,10 +1,16 @@
 import UserCard from "@/components/ui/user-card"
+import { dreams } from "@/data/dreams-data"
 
 
 export default function Test (){
     return (
-        <div className=" p-75 flex items-center justify-center">
-<UserCard/>
+        <div className="pt-35  ">
+{dreams.map((dream) => (
+  <UserCard
+    key={dream.id}
+    dream={dream}
+  />
+))}
         </div>
     )
 }

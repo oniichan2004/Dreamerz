@@ -4,6 +4,7 @@ import Inspiration from "@/components/sections/inspiration";
 import HowItWorks from "@/components/sections/how-it-works";
 import FulfillTheirDreams from "@/components/sections/fulfill-their-dreams";
 
+import Donations from "@/components/sections/donations";
 export default function Home() {
   return (
     <div>
@@ -12,6 +13,7 @@ export default function Home() {
       <Inspiration/>
 <HowItWorks/>
 <FulfillTheirDreams/>
+<Donations/>  
     </div>
   );
 }

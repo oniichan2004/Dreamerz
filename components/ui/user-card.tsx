@@ -20,7 +20,7 @@ export default function UserCard({ dream }: userCardProps) {
           fill
           className="object-cover rounded-t-2xl"
         />
-        <div className="absolute left-1/2  aspect-square w-[40%] -translate-x-1/2 translate-y-[20%] overflow-hidden rounded-full border-2 border-white">
+        <div className="absolute left-1/2  aspect-square w-[40%] -translate-x-1/2 translate-y-[40%] overflow-hidden rounded-full border-2 border-white">
           <Image
             alt="avatar"
             src={dream.avatar}
@@ -40,7 +40,10 @@ export default function UserCard({ dream }: userCardProps) {
           </Text>
         </div>
         <div>
-          <Text className=" text-xl text-black/40 line-clamp-2  md:text-2xl" font="grotesk">
+          <Text
+            className=" text-xl text-black/40 line-clamp-2  md:text-2xl"
+            font="grotesk"
+          >
             {dream.dream}
           </Text>
         </div>

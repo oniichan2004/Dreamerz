@@ -1,5 +1,7 @@
 import "../styles/marque.css";
 import { Text } from "../ui/text";
+import { cn } from "@/lib/utils";
+
 const ITEMS = [
   "Self-Promotion Through Charity",
   "Direct Dream Backing",
@@ -22,24 +24,33 @@ const ITEMS = [
   "Support Inspire Achieve",
   "Give Hope Gain Recognition",
 ];
-
 export default function Marquee({
   direction,
+  itemClassName,
 }: {
-  direction: "left" | "right";
+  direction: "left" | "right" | "up";
+  itemClassName?: string;
 }) {
-  return <div className="overflow-hidden w-full " >
-
-<div className={`marquee marquee--${direction}`}>
-{[...ITEMS,...ITEMS].map((item,i) => (
-    <Text className="   rounded-xl text-md px-4 py-5 bg-white md:px-9 md:py-8 font-semibold  md:text-2xl whitespace-nowrap"
-    key={i}>
-
-        {item}
-    </Text>
-))}
-
-</div>
-
-  </div>;
+  return (
+    <div
+      className={cn(
+        "overflow-hidden",
+        direction === "up" ? "h-full max-h-full" : "w-full",
+      )}
+    >
+      <div className={`marquee marquee--${direction}`}>
+        {[...ITEMS, ...ITEMS].map((item, i) => (
+          <Text
+            key={i}
+            className={cn(
+              "   rounded-xl text-md px-4 py-5 bg-white md:px-4 md:py-7 font-semibold  md:text-2xl whitespace-nowrap",
+              itemClassName,
+            )}
+          >
+            {item}
+          </Text>
+        ))}
+      </div>
+    </div>
+  );
 }

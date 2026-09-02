@@ -1,7 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Caveat , Poppins,Space_Grotesk} from "next/font/google";
-import Header from "../components/core/header";
-import Footer from "../components/core/footer";
+import {
+  Geist,
+  Geist_Mono,
+  Caveat,
+  Poppins,
+  Space_Grotesk,
+} from "next/font/google";
+import Header from "@/components/core/header";
+import Footer from "@/components/core/footer";
 import "./globals.css";
 
 const geistSans = Geist({

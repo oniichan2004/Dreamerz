@@ -26,4 +26,23 @@
   .marquee--right {
     animation: none;
   }
+    .marquee--up {
+    animation: none;
+  }
+}
+
+
+
+@keyframes marquee-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+.marquee--up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: auto;
+  height: max-content;
+  animation: marquee-up 30s linear infinite;
 }

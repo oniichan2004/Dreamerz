@@ -25,47 +25,54 @@ export default function Header() {
 
   return (
     <header
-      className={`z-50 flex items-center transition-all duration-300 ${
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "fixed top-0 left-0 w-full flex-row justify-between bg-white px-4 py-3"
-          : ` fixed top-0 left-0 w-full flex-col justify-center gap-4 p-7 pt-3 sm:flex-row sm:justify-between
-          ${isLightHeader ? "bg-white" : "bg-transparent"}`
-      }  `}
+          ? "bg-white px-4 py-3"
+          : `p-7 pt-3 ${isLightHeader ? "bg-white" : "bg-transparent"}`
+      }`}
     >
-      <div className="text-white">
-        <Link href="/">
-          <Image
-            src="/shooting-star.png"
-            alt="Logo"
-            width={200}
-            height={40}
-            className={`brightness-0 ${scrolled ? "w-24 sm:w-50" : "w-32 sm:w-50 "} ${isLightHeader ? "" : "invert"}`}
-          />
-        </Link>
-      </div>
-      <div className="flex flex-row gap-2 sm:gap-4 ">
-        <Link
-          href="/"
-          className={` flex items-center justify-center btn-login   text-white h-[42px] w-[108px] rounded-[12px]  sm:h-[65px]  sm:w-[220px] hover:bg-gradient-to-r hover:from-[#84fad5] hover:via-[#e9c6ff] hover:to-[#f8ed84] hover:text-black  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]`}
-        >
-          <span
-            className={` ${isLightHeader ? "text-black" : "text-white"}  ${scrolled ? "text-sm text-black sm:text-base md:text-lg lg:text-xl" : "text-sm sm:text-base md:text-lg lg:text-xl"}  text-sm sm:text-base md:text-lg lg:text-xl whitespace-nowrap`}
+      <div
+        className={`mx-auto flex w-full max-w-[1800px] items-center ${
+          scrolled
+            ? "flex-row justify-between"
+            : "flex-col justify-center gap-4 sm:flex-row sm:justify-between"
+        }`}
+      >
+        <div className="text-white">
+          <Link href="/">
+            <Image
+              src="/shooting-star.png"
+              alt="Logo"
+              width={200}
+              height={40}
+              className={`brightness-0 ${scrolled ? "w-24 sm:w-50" : "w-32 sm:w-50 "} ${isLightHeader ? "" : "invert"}`}
+            />
+          </Link>
+        </div>
+        <div className="flex flex-row gap-2 sm:gap-4 ">
+          <Link
+            href="/"
+            className={` flex items-center justify-center btn-login   text-white h-[42px] w-[108px] rounded-[12px]  sm:h-[65px]  sm:w-[220px] hover:bg-gradient-to-r hover:from-[#84fad5] hover:via-[#e9c6ff] hover:to-[#f8ed84] hover:text-black  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]`}
           >
-            Log in
-          </span>
-        </Link>
+            <span
+              className={` ${isLightHeader ? "text-black" : "text-white"}  ${scrolled ? "text-sm text-black sm:text-base md:text-lg lg:text-xl" : "text-sm sm:text-base md:text-lg lg:text-xl"}  text-sm sm:text-base md:text-lg lg:text-xl whitespace-nowrap`}
+            >
+              Log in
+            </span>
+          </Link>
 
-        <Link
-          href="/"
-          className={cn(
-            buttonVariants({ variant: "gradient" }),
-            " h-[42px] w-[108px] rounded-[12px]  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]  sm:h-[65px]  sm:w-[220px]",
-          )}
-        >
-          <span className="font-sans whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl">
-            Sign Up
-          </span>
-        </Link>
+          <Link
+            href="/"
+            className={cn(
+              buttonVariants({ variant: "gradient" }),
+              " h-[42px] w-[108px] rounded-[12px]  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]  sm:h-[65px]  sm:w-[220px]",
+            )}
+          >
+            <span className="font-sans whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl">
+              Sign Up
+            </span>
+          </Link>
+        </div>
       </div>
     </header>
   );

@@ -11,39 +11,51 @@ const STEPS = [
 ];
 export default function HowItWorks() {
   return (
-    <div className="flex flex-col p-3  pb-10 xl:flex-row xl:gap-10  xl:py-20 2xl:px-30">
-        <div className="xl:px-20 ">
-      <Text font="grotesk" as="span" className="text-4xl font-bold pb-7  md:text-6xl">
-        How Dreamerz works:
-      </Text>
-      <ol className="pb-7 pt-10 ">
-        {STEPS.map((items, i) => (
-          <li key={i} className=" relative flex gap-5 pb-8">
-            {i < STEPS.length - 1 && (
-              <span className=" bg-linear-to-b from-[#84fad5] via-[#e9c6ff] to-[#f8ed84] absolute top-9 left-[17px] h-full w-px  bg-amber-200"></span>
-            )}
-
-            <span className=" bg-linear-to-b from-[#84fad5] via-[#e9c6ff] to-[#f8ed84] flex size-9 shrink-0 font-bold items-center justify-center rounded-full border border-amber-200 text-sm">
-              {i + 1}
-            </span>
-            <Text font="grotesk" as="span" className="pt-1 text-xl  md:text-2xl">
-              {items}
-            </Text>
-          </li>
-        ))}
-      </ol>
-
-      <Button
-        variant="gradient"
-        className=" flex  items-center justify-center ml-3  mr-20  max-w-150 py-9 "
-      >
-        <Text font="grotesk" as="span" className="text-2xl font-bold  ">
-          Get my dream fullfiled
+    <div className="mx-auto flex w-full max-w-[1800px] flex-col p-3 pb-10 xl:flex-row xl:gap-10 xl:py-20 2xl:px-30 xl:justify-center">
+      <div className="xl:px-20 ">
+        <Text
+          font="grotesk"
+          as="span"
+          className="text-4xl font-bold pb-7  md:text-6xl"
+        >
+          How Dreamerz works:
         </Text>
-      </Button>
-</div>
+        <ol className="pb-7 pt-10 ">
+          {STEPS.map((items, i) => (
+            <li key={i} className=" relative flex gap-5 pb-8">
+              {i < STEPS.length - 1 && (
+                <span className=" bg-linear-to-b from-[#84fad5] via-[#e9c6ff] to-[#f8ed84] absolute top-9 left-[17px] h-full w-px  bg-amber-200"></span>
+              )}
+
+              <span className=" bg-linear-to-b from-[#84fad5] via-[#e9c6ff] to-[#f8ed84] flex size-9 shrink-0 font-bold items-center justify-center rounded-full border border-amber-200 text-sm">
+                {i + 1}
+              </span>
+              <Text
+                font="grotesk"
+                as="span"
+                className="pt-1 text-xl  md:text-2xl"
+              >
+                {items}
+              </Text>
+            </li>
+          ))}
+        </ol>
+
+        <Button
+          variant="gradient"
+          className=" flex  items-center justify-center ml-3  mr-20  max-w-150 py-9 "
+        >
+          <Text font="grotesk" as="span" className="text-2xl font-bold  ">
+            Get my dream fullfiled
+          </Text>
+        </Button>
+      </div>
       <div className="flex flex-col gap-4 py-10 btn-login px-4 mt-5 mx-3 rounded-2xl h-fit  bg-linear-to-r from-[#ddfef4] via-[#faf4ff] to-[#fefce8] xl:max-w-xl xl:px-20">
-        <Text as="span" font="grotesk" className="font-semibold text-xl md:text-3xl">
+        <Text
+          as="span"
+          font="grotesk"
+          className="font-semibold text-xl md:text-3xl"
+        >
           How you will receive your dream fulfilled:
         </Text>
 

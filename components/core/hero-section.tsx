@@ -50,7 +50,8 @@ export default function Hero() {
             donors and achieve your dreams faster — together!
           </Text>
 
-          <button
+          <Link
+            href="/"
             className={cn(
               buttonVariants({ variant: "gradient" }),
               "w-48 h-11 sm:w-52 sm:h-12 md:w-60 lg:w-64 lg:h-14 xl:w-72 xl:h-16 2xl:w-80 2xl:h-20 hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]",
@@ -59,7 +60,7 @@ export default function Hero() {
             <span className="font-sans whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl">
               Start My Journey
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -5,13 +5,16 @@ import { Text } from "@/components/ui/text";
 import { Button } from "../ui/button";
 export default function Donations() {
   return (
-    <div className="relative  z-10  w-full min-h-screen flex flex-col p-10 pb-20 xl:flex-row  xl:pt-20 xl:px-20 xl:gap-20">
-      <Image
-        alt="donations-background"
-        src="/donations-background.png"
-        fill
-        className="object-cover"
-      />
+    <div className="relative w-full bg-[#010e2d] overflow-hidden">
+      <div className="absolute inset-0 mx-auto max-w-[2400px]">
+        <Image
+          alt="donations-background"
+          src="/donations-background.png"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="relative z-10 mx-auto flex w-full max-w-[1800px] flex-col p-10 pb-20 xl:flex-row xl:gap-20 xl:px-20 xl:pt-20">
       <div className="relative  h-[420px] w-[320px] sm:h-[520px] sm:w-[420px]  shrink-0 xl:order-2">
         <Image
           alt="donations-text"
@@ -69,7 +72,7 @@ export default function Donations() {
           <div className="flex flex-row items-center justify-center gap-4 pb-10">
             <div className=" bg-linear-to-br  from-[#22ba97] via-[#c174ed] to-[#FFF08A] rounded-sm  flex items-center justify-center">
               <Check />
-            </div >
+            </div>
             <Text
               as="span"
               font="grotesk"
@@ -79,9 +82,13 @@ export default function Donations() {
             </Text>
           </div>
           <Button variant="gradient" className=" px-5 py-7 ">
-         <Text as="span" font="grotesk" className="font-bold" > Start receiving donations</Text>   
+            <Text as="span" font="grotesk" className="font-bold">
+              {" "}
+              Start receiving donations
+            </Text>
           </Button>
         </div>
+      </div>
       </div>
     </div>
   );

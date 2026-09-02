@@ -4,7 +4,6 @@ import type { Dream } from "@/types/dream";
 import {
   Progress,
   ProgressIndicator,
-  ProgressValue,
   ProgressTrack,
 } from "./progress";
 type userCardProps = {
@@ -13,7 +12,7 @@ type userCardProps = {
 export default function UserCard({ dream }: userCardProps) {
   return (
     <div className="w-full text-center ">
-      <div className="relative aspect-[4/3] w-full">
+      <div className="relative aspect-4/3 w-full">
         <Image
           alt="card-background"
           src="/header-background.png"

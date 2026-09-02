@@ -5,7 +5,7 @@ import { Text } from "../ui/text";
 export default function Footer() {
   return (
     <div className="flex flex-col gap-7 bg-black text-white/70 pl-8 pb-10 xl:px-10   ">
-      <div className="flex flex-col gap-7   md:pl-10 xl:flex-row xl:pt-10  xl:grid xl:grid-cols-3   ">
+      <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-7 md:pl-10 xl:flex-row xl:grid xl:grid-cols-3 xl:pt-10">
         <div className="pt-10">
           <Image
             src="/shooting-star.png"

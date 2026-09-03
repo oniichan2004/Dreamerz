@@ -27,13 +27,13 @@ export default function Hero() {
             as="span"
             variant="gradient"
             font="caveat"
-            className=" text-4xl md:text-5xl  "
+            className=" text-3xl md:text-4xl  "
           >
             The Social Network For Dreams
           </Text>
 
           <Text
-            className="text-xl  text-white sm:text-3xl md:text-4xl font-bold lg:text-5xl xl:text-6xl"
+            className="text-lg  text-white sm:text-2xl md:text-3xl font-bold lg:text-4xl xl:text-5xl"
             font="grotesk"
             as="span"
           >
@@ -43,7 +43,7 @@ export default function Hero() {
           <Text
             as="span"
             font="grotesk"
-            className="text-sm sm:text-base md:text-lg text-white/70 lg:text-xl xl:text-2xl 2xl:text-3xl"
+            className="text-sm sm:text-base md:text-base text-white/70 lg:text-lg xl:text-xl 2xl:text-2xl"
           >
             Realize your dreams by supporting others. Donate $1 to dreams you
             love and gain 10x visibility for yours, worldwide. Attract more
@@ -54,10 +54,10 @@ export default function Hero() {
             href="/"
             className={cn(
               buttonVariants({ variant: "gradient" }),
-              "w-48 h-11 sm:w-52 sm:h-12 md:w-60 lg:w-64 lg:h-14 xl:w-72 xl:h-16 2xl:w-80 2xl:h-20 hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]",
+              "w-40 h-10 sm:w-44 sm:h-11 md:w-48 lg:w-52 lg:h-12 xl:w-56 2xl:w-60 hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]",
             )}
           >
-            <span className="font-sans whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl">
+            <span className="font-sans whitespace-nowrap text-sm sm:text-base md:text-base lg:text-lg">
               Start My Journey
             </span>
           </Link>

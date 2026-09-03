@@ -29,10 +29,10 @@ export default function UserCard({ dream }: userCardProps) {
         </div>
       </div>
 
-      <div className=" p-8  flex flex-col gap-8  bg-white rounded-b-2xl ">
+      <div className=" p-6  flex flex-col gap-6  bg-white rounded-b-2xl ">
         <div className="">
           <Text
-            className="font-bold text-2xl text-black/80 hover:underline cursor-pointer  line-clamp-1 md:text-4xl"
+            className="font-bold text-lg text-black/80 hover:underline cursor-pointer  line-clamp-1 md:text-xl"
             font="grotesk"
           >
             {dream.firstName} {dream.lastName}
@@ -40,7 +40,7 @@ export default function UserCard({ dream }: userCardProps) {
         </div>
         <div>
           <Text
-            className=" text-xl text-black/40 line-clamp-2  md:text-2xl"
+            className=" text-base text-black/40 line-clamp-2  md:text-lg"
             font="grotesk"
           >
             {dream.dream}
@@ -48,7 +48,7 @@ export default function UserCard({ dream }: userCardProps) {
         </div>
 
         <div className="flex justify-between ">
-          <Text className="font-bold text-lg md:text-xl" font="grotesk">
+          <Text className="font-bold text-base md:text-lg" font="grotesk">
             Scope
           </Text>
           {dream.scope}%

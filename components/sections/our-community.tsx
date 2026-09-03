@@ -10,7 +10,7 @@ export default function OurCommunity() {
         <Text
           as="span"
           font="caveat"
-          className="font-bold text-5xl lg:text-6xl"
+          className="font-bold text-4xl lg:text-5xl"
         >
           Join Our Dream Community!
         </Text>

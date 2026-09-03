@@ -5,16 +5,13 @@ import { Text } from "@/components/ui/text";
 import { Button } from "../ui/button";
 export default function Donations() {
   return (
-    <div className="relative w-full bg-[#010e2d] overflow-hidden">
-      <div className="absolute inset-0 mx-auto max-w-[2400px]">
-        <Image
-          alt="donations-background"
-          src="/donations-background.png"
-          fill
-          className="object-cover"
-        />
-      </div>
-      <div className="relative z-10 mx-auto flex w-full max-w-[1800px] flex-col p-10 pb-20 xl:flex-row xl:gap-20 xl:px-20 xl:pt-20">
+    <div className="relative  z-10  w-full h-screen justify-center flex flex-col p-10 pb-20 xl:flex-row  xl:pt-20 xl:px-20 xl:gap-20">
+      <Image
+        alt="donations-background"
+        src="/donations-background.png"
+        fill
+        className="object-cover"
+      />
       <div className="relative  h-[420px] w-[320px] sm:h-[520px] sm:w-[420px]  shrink-0 xl:order-2">
         <Image
           alt="donations-text"
@@ -31,13 +28,13 @@ export default function Donations() {
           <Text
             as="span"
             font="grotesk"
-            className="text-3xl font-bold text-white "
+            className="text-2xl font-bold text-white "
           >
             Secured Donations
           </Text>
         </div>
         <div>
-          <Text as="span" font="grotesk" className="text-xl  text-white ">
+          <Text as="span" font="grotesk" className="text-lg  text-white ">
             The platform provides a strict trackkeeping of your balance. Every
             made and received donation will be confidently saved in separate
             sections of your personal account
@@ -51,7 +48,7 @@ export default function Donations() {
             <Text
               as="span"
               font="grotesk"
-              className="text-xl font-bold text-white "
+              className="text-lg font-bold text-white "
             >
               You choose who do you want to support
             </Text>
@@ -64,7 +61,7 @@ export default function Donations() {
             <Text
               as="span"
               font="grotesk"
-              className="text-xl font-bold text-white "
+              className="text-lg font-bold text-white "
             >
               One dream at a time
             </Text>
@@ -76,19 +73,18 @@ export default function Donations() {
             <Text
               as="span"
               font="grotesk"
-              className="text-xl font-bold text-white "
+              className="text-lg font-bold text-white "
             >
               Transparent Fulfilled and Received Donations history
             </Text>
           </div>
-          <Button variant="gradient" className=" px-5 py-7 ">
+          <Button variant="gradient" className=" px-5 py-4 ">
             <Text as="span" font="grotesk" className="font-bold">
               {" "}
               Start receiving donations
             </Text>
           </Button>
         </div>
-      </div>
       </div>
     </div>
   );

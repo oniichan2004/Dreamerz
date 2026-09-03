@@ -16,7 +16,7 @@ export default function HowItWorks() {
         <Text
           font="grotesk"
           as="span"
-          className="text-4xl font-bold pb-7  md:text-6xl"
+          className="text-3xl font-bold pb-7  md:text-5xl"
         >
           How Dreamerz works:
         </Text>
@@ -33,7 +33,7 @@ export default function HowItWorks() {
               <Text
                 font="grotesk"
                 as="span"
-                className="pt-1 text-xl  md:text-2xl"
+                className="pt-1 text-lg  md:text-xl"
               >
                 {items}
               </Text>
@@ -43,9 +43,9 @@ export default function HowItWorks() {
 
         <Button
           variant="gradient"
-          className=" flex  items-center justify-center ml-3  mr-20  max-w-150 py-9 "
+          className=" flex  items-center justify-center ml-3  mr-20  max-w-150 py-5 "
         >
-          <Text font="grotesk" as="span" className="text-2xl font-bold  ">
+          <Text font="grotesk" as="span" className="text-lg font-bold  ">
             Get my dream fullfiled
           </Text>
         </Button>
@@ -54,12 +54,12 @@ export default function HowItWorks() {
         <Text
           as="span"
           font="grotesk"
-          className="font-semibold text-xl md:text-3xl"
+          className="font-semibold text-lg md:text-2xl"
         >
           How you will receive your dream fulfilled:
         </Text>
 
-        <Text as="span" font="grotesk" className="md:text-xl">
+        <Text as="span" font="grotesk" className="md:text-lg">
           Everyone has to donate in order to fulfill their dreams. For every $1
           you donate, it creates a 10x higher visibility worldwide, which helps
           you attract more donors to your dream, allowing you to achieve your

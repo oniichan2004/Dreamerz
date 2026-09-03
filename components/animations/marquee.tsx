@@ -43,7 +43,7 @@ export default function Marquee({
           <Text
             key={i}
             className={cn(
-              "   rounded-xl text-md px-4 py-5 bg-white md:px-4 md:py-7 font-semibold  md:text-2xl whitespace-nowrap",
+              "   rounded-xl text-sm px-4 py-3 bg-white md:px-4 md:py-4 font-semibold  md:text-lg whitespace-nowrap",
               itemClassName,
             )}
           >

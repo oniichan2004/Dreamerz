@@ -27,8 +27,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-white px-4 py-3"
-          : `p-7 pt-3 ${isLightHeader ? "bg-white" : "bg-transparent"}`
+          ? "bg-white px-4 py-2"
+          : `px-4 py-3 ${isLightHeader ? "bg-white" : "bg-transparent"}`
       }`}
     >
       <div
@@ -45,30 +45,30 @@ export default function Header() {
               alt="Logo"
               width={200}
               height={40}
-              className={`brightness-0 ${scrolled ? "w-24 sm:w-50" : "w-32 sm:w-50 "} ${isLightHeader ? "" : "invert"}`}
+              className={`brightness-0 w-24 sm:w-32 ${isLightHeader ? "" : "invert"}`}
             />
           </Link>
         </div>
         <div className="flex flex-row gap-2 sm:gap-4 ">
           <Link
             href="/"
-            className={` flex items-center justify-center btn-login   text-white h-[42px] w-[108px] rounded-[12px]  sm:h-[65px]  sm:w-[220px] hover:bg-gradient-to-r hover:from-[#84fad5] hover:via-[#e9c6ff] hover:to-[#f8ed84] hover:text-black  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]`}
+            className={` flex items-center justify-center btn-login   text-white h-[30px] w-[72px] rounded-[8px]  sm:h-[36px]  sm:w-[104px] hover:bg-gradient-to-r hover:from-[#84fad5] hover:via-[#e9c6ff] hover:to-[#f8ed84] hover:text-black  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]`}
           >
             <span
-              className={` ${isLightHeader ? "text-black" : "text-white"}  ${scrolled ? "text-sm text-black sm:text-base md:text-lg lg:text-xl" : "text-sm sm:text-base md:text-lg lg:text-xl"}  text-sm sm:text-base md:text-lg lg:text-xl whitespace-nowrap`}
+              className={` ${isLightHeader ? "text-black" : "text-white"}  ${scrolled ? "text-xs text-black sm:text-sm" : "text-xs sm:text-sm"}  whitespace-nowrap`}
             >
               Log in
             </span>
           </Link>
 
           <Link
-            href="/"
+            href="/register"
             className={cn(
               buttonVariants({ variant: "gradient" }),
-              " h-[42px] w-[108px] rounded-[12px]  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]  sm:h-[65px]  sm:w-[220px]",
+              " h-[30px] w-[72px] rounded-[8px]  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]  sm:h-[36px]  sm:w-[104px]",
             )}
           >
-            <span className="font-sans whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl">
+            <span className="font-sans whitespace-nowrap text-xs sm:text-sm">
               Sign Up
             </span>
           </Link>

@@ -17,7 +17,7 @@ export default function FulfillTheirDreams() {
         <Text
           as="span"
           font="grotesk"
-          className="text-3xl  text-gray-700 sm:text-3xl md:text-4xl lg:text-4xl"
+          className="text-2xl  text-gray-700 sm:text-2xl md:text-3xl lg:text-3xl"
         >
           Latest Dreams on Dreamerz
         </Text>
@@ -45,11 +45,11 @@ export default function FulfillTheirDreams() {
       </div>
 
       <div className="">
-        <Button variant="gradient" className="py-6 px-9  md:py-10 md:px-16">
+        <Button variant="gradient" className="py-4 px-7  md:py-6 md:px-10">
           <Text
             as="span"
             font="grotesk"
-            className="text-xl font-bold md:text-2xl lg:text-3xl"
+            className="text-lg font-bold md:text-xl lg:text-2xl"
           >
             Fulfill Their Dreams
           </Text>

@@ -6,7 +6,7 @@ export default function Choose() {
         as="span"
         variant="default"
         font="grotesk"
-        className="text-3xl font-bold sm:text-6xl"
+        className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl"
       >
         Why Choose Dreamerz
       </Text>

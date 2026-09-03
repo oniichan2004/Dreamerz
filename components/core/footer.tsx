@@ -12,43 +12,43 @@ export default function Footer() {
             width={200}
             height={40}
             alt="Logo"
-            className="md:w-60 xl:w-65 xl:h-auto "
+            className="md:w-40 xl:w-55 xl:h-auto "
           />
         </div>
         <div className="flex flex-col gap-7 xl:flex-row xl:pt-20 xl:gap-7 xl:justify-self-center">
           <Link href="/">
-            <Text font="grotesk" className="hover:text-blue-600 md:text-xl  ">
+            <Text font="grotesk" className="hover:text-blue-600 md:text-sm  ">
               {" "}
               How it works
             </Text>
           </Link>
           <Link href="/">
-            <Text font="grotesk" className="hover:text-blue-600 md:text-xl ">
+            <Text font="grotesk" className="hover:text-blue-600 md:text-sm ">
               {" "}
               About us
             </Text>
           </Link>
           <Link href="/">
-            <Text font="grotesk" className="hover:text-blue-600 md:text-xl ">
+            <Text font="grotesk" className="hover:text-blue-600 md:text-sm ">
               {" "}
               Terms
             </Text>
           </Link>
           <Link href="/">
-            <Text font="grotesk" className="hover:text-blue-600 md:text-xl ">
+            <Text font="grotesk" className="hover:text-blue-600 md:text-sm ">
               {" "}
               Privacy
             </Text>
           </Link>
           <Link href="/">
-            <Text font="grotesk" className="hover:text-blue-600 md:text-xl ">
+            <Text font="grotesk" className="hover:text-blue-600 md:text-sm ">
               {" "}
               FAQ
             </Text>
           </Link>
         </div>
         <div className="flex flex-col xl:justify-self-end xl:pt-20 pr-20 ">
-          <Text className="md:text-xl">Follow Us:</Text>
+          <Text className="md:text-sm">Follow Us:</Text>
           <div className="flex flex-row gap-5  ">
             <Link href="/">
               <Image
@@ -90,7 +90,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="xl:flex xl:justify-center">
-        <Text className="text-md  text-white/30 md:text-xl  md:pl-10 xl:text-2xl">
+        <Text className="text-md  text-white/30 md:text-xl  md:pl-10 xl:text-xl">
           © Dreamerz 2026, All rights reserved
         </Text>
       </div>

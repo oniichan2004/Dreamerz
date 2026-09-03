@@ -13,14 +13,14 @@ export default function Questions() {
         <Text
           as="span"
           font="grotesk"
-          className="font-bold text-2xl md:text-4xl lg:text-5xl"
+          className="font-bold text-xl md:text-3xl lg:text-4xl"
         >
           Frequently Asked Questions
         </Text>
         <Text
           as="span"
           font="grotesk"
-          className=" text-lg md:text-xl lg:text-2xl"
+          className=" text-base md:text-lg lg:text-xl"
         >
           Find answears to common questions about our social network platform
           and comunity.

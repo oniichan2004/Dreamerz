@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="flex flex-row gap-5  ">
             <Link href="/">
               <Image
-                src="/youtube.png"
+                src="/social-media-icons/youtube.png"
                 width={30}
                 height={30}
                 alt="youtube-logo"
@@ -61,7 +61,7 @@ export default function Footer() {
             </Link>
             <Link href="/">
               <Image
-                src="/facebook.png"
+                src="/social-media-icons/facebook.png"
                 width={30}
                 height={30}
                 alt="facebook-logo"
@@ -70,7 +70,7 @@ export default function Footer() {
             </Link>
             <Link href="/">
               <Image
-                src="/instagram.png"
+                src="/social-media-icons/instagram.png"
                 width={30}
                 height={30}
                 alt="instagram-logo"
@@ -79,7 +79,7 @@ export default function Footer() {
             </Link>
             <Link href="/">
               <Image
-                src="/twitter.png"
+                src="/social-media-icons/twitter.png"
                 width={30}
                 height={30}
                 alt="twitter-logo"

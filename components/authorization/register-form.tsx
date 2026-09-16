@@ -14,7 +14,11 @@ import {
   type RegisterFormValues,
 } from "@/schemas/authorization-schema";
 import { CircleAlert, CheckCircle2, Info } from "lucide-react";
+import { RegisterPayload } from "@/api/types";
+import { useMutation } from "@tanstack/react-query";
+import { register as registerRequest } from "@/api/requests";
 
+import { toast } from "sonner";
 export default function Register() {
   const {
     register,
@@ -38,8 +42,18 @@ export default function Register() {
     valid: req.test(password),
   }));
 
-  const onSubmit = (_data: RegisterFormValues) => {
-    // TODO: send data to the backend
+  const registerMutation = useMutation({
+    mutationFn: (payload: RegisterPayload) => registerRequest(payload),
+    onSuccess: (data) => {
+      toast.success("Account created successfully!");
+    },
+    onError: () => {
+      toast.error("Something went wrong. Please try again.");
+    },
+  });
+
+  const onSubmit = (data: RegisterFormValues) => {
+    registerMutation.mutate({ email: data.email, password: data.password });
   };
 
   return (

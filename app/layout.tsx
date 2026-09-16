@@ -8,8 +8,10 @@ import {
 } from "next/font/google";
 import Header from "@/components/core/header";
 import Footer from "@/components/core/footer";
+import { Toaster } from "sonner";
 import "./globals.css";
 
+import { Providers } from "./providers/query-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -64,9 +66,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} ${poppins.variable} ${spaceGrotesk.variable}`}
     >
       <body className="flex min-h-dvh flex-col antialiased">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </Providers>
+        <Toaster />
       </body>
     </html>
   );

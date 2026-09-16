@@ -5,7 +5,7 @@ import { Text } from "@/components/ui/text";
 import { Button } from "../ui/button";
 export default function Donations() {
   return (
-    <div className="relative  z-10  w-full h-screen justify-center flex flex-col p-10 pb-20 xl:flex-row  xl:pt-20 xl:px-20 xl:gap-20">
+    <div className="relative  z-10  w-full min-h-screen justify-center flex flex-col p-10 pb-20 xl:flex-row  xl:pt-20 xl:px-20 xl:gap-20">
       <Image
         alt="donations-background"
         src="/donations-background.png"

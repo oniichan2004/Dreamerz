@@ -51,7 +51,7 @@ export default function Header() {
         </div>
         <div className="flex flex-row gap-2 sm:gap-4 ">
           <Link
-            href="/"
+            href="/login"
             className={` flex items-center justify-center btn-login   text-white h-[30px] w-[72px] rounded-[8px]  sm:h-[36px]  sm:w-[104px] hover:bg-gradient-to-r hover:from-[#84fad5] hover:via-[#e9c6ff] hover:to-[#f8ed84] hover:text-black  hover:shadow-[0_14px_30px_-12px_rgba(195,168,245,1)]`}
           >
             <span

@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import { questions } from "@/data/accordion";
+import { questions } from "../../data/accordion-data";
 export default function Questions() {
   return (
     <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 py-10 px-5 lg:flex-row lg:items-center xl:p-20">

@@ -13,7 +13,7 @@ export default function WingsDonations() {
           className=" object-contain"
         />
       </div>
-      <div className="flex flex-col items-center  -mt-20 px-20  gap-5 max-w-200">
+      <div className="flex flex-col items-center  -mt-20 px-6 sm:px-10 md:px-16 lg:px-20  gap-5 max-w-200">
         <Text className=" font-bold  text-3xl   text-black/80 " font="grotesk">
           Wings Donations
         </Text>

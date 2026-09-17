@@ -17,9 +17,11 @@ import { CircleAlert, CheckCircle2, Info } from "lucide-react";
 import { RegisterPayload } from "@/api/types";
 import { useMutation } from "@tanstack/react-query";
 import { register as registerRequest } from "@/api/requests";
-
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { log } from "console";
 export default function Register() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -43,9 +45,11 @@ export default function Register() {
   }));
 
   const registerMutation = useMutation({
-    mutationFn: (payload: RegisterPayload) => registerRequest(payload),
-    onSuccess: (data) => {
+    mutationFn: registerRequest,
+    onSuccess: () => {
+      console.log("created");
       toast.success("Account created successfully!");
+      router.replace("/newsfeed");
     },
     onError: () => {
       toast.error("Something went wrong. Please try again.");

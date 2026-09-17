@@ -10,3 +10,9 @@ export interface RefreshResponse {
   accessToken: string;
   refreshToken: string;
 }
+
+export interface LoginPayload {
+  email: string;
+  password: string;
+}
+export type LoginResponse = RegisterResponse;

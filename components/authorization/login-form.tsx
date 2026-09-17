@@ -8,10 +8,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { loginSchema, type LoginFormValues } from "@/schemas/authorization-schema";
+import {
+  loginSchema,
+  type LoginFormValues,
+} from "@/schemas/authorization-schema";
 import { CircleAlert } from "lucide-react";
+import { login } from "@/api/requests";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import { LoginPayload } from "@/api/types";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -24,9 +33,19 @@ export default function Login() {
       password: "",
     },
   });
+  const loginMutation = useMutation({
+    mutationFn: (payload: LoginPayload) => login(payload),
+    onSuccess: () => {
+      router.replace("/newsfeed");
+      toast.success("Welcome back");
+    },
+    onError: () => {
+      toast.error("Someyhong Wrong");
+    },
+  });
 
-  const onSubmit = (_data: LoginFormValues) => {
-    // TODO: send data to the backend
+  const onSubmit = (data: LoginFormValues) => {
+    loginMutation.mutate(data);
   };
 
   return (
@@ -58,7 +77,7 @@ export default function Login() {
                 "w-full rounded-md border h-9",
                 errors.email
                   ? "border-red-500 focus-visible:border-red-500"
-                  : "border-gray-300"
+                  : "border-gray-300",
               )}
               aria-invalid={!!errors.email}
               {...register("email")}
@@ -89,7 +108,7 @@ export default function Login() {
                 "w-full rounded-md border h-9",
                 errors.password
                   ? "border-red-500 focus-visible:border-red-500"
-                  : "border-gray-300"
+                  : "border-gray-300",
               )}
               type="password"
               aria-invalid={!!errors.password}
@@ -110,7 +129,7 @@ export default function Login() {
             className={cn(
               "w-full max-w-90 h-11 rounded-xl  text-base",
               !isValid &&
-                "bg-gray-200 text-gray-400 cursor-not-allowed hover:shadow-none"
+                "bg-gray-200 text-gray-400 cursor-not-allowed hover:shadow-none",
             )}
           >
             Log in

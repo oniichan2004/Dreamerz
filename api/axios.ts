@@ -1,5 +1,6 @@
 import axios, { type InternalAxiosRequestConfig } from "axios";
 import type { RefreshResponse } from "./types";
+import { getAccessToken, getRefreshToken, setTokens, clearTokens } from "@/lib/auth-tokens";
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 export const api = axios.create({
@@ -9,7 +10,7 @@ export const api = axios.create({
   },
 });
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("accessToken");
+  const token = getAccessToken();
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -20,7 +21,7 @@ type RetriableRequestConfig = InternalAxiosRequestConfig & { _retry?: boolean };
 let refreshPromise: Promise<string> | null = null;
 
 const refreshAccessToken = async () => {
-  const refreshToken = localStorage.getItem("refreshToken");
+  const refreshToken = getRefreshToken();
   if (!refreshToken) {
     throw new Error("No refresh token avalaible");
   }
@@ -28,8 +29,7 @@ const refreshAccessToken = async () => {
   const { data } = await axios.get<RefreshResponse>(`${baseURL}/auth/refresh`, {
     headers: { Authorization: `Bearer ${refreshToken}` },
   });
-  localStorage.setItem("accessToken", data.accessToken);
-  localStorage.setItem("refreshToken", data.refreshToken);
+  setTokens(data.accessToken, data.refreshToken);
   return data.accessToken;
 };
 api.interceptors.response.use(
@@ -55,8 +55,7 @@ api.interceptors.response.use(
       originalRequest.headers.Authorization = `Bearer ${accessToken}`;
       return api(originalRequest);
     } catch (refreshError) {
-      localStorage.removeItem("accessToken");
-      localStorage.removeItem("refreshToken");
+      clearTokens();
       window.location.href = "/login";
       return Promise.reject(refreshError);
     }

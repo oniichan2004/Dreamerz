@@ -14,14 +14,13 @@ import {
   type RegisterFormValues,
 } from "@/schemas/authorization-schema";
 import { CircleAlert, CheckCircle2, Info } from "lucide-react";
-import { RegisterPayload } from "@/api/types";
 import { useMutation } from "@tanstack/react-query";
-import { register as registerRequest } from "@/api/requests";
+import { useAuth } from "@/app/providers/auth-provider";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { log } from "console";
 export default function Register() {
   const router = useRouter();
+  const { register: registerUser } = useAuth();
   const {
     register,
     handleSubmit,
@@ -45,7 +44,7 @@ export default function Register() {
   }));
 
   const registerMutation = useMutation({
-    mutationFn: registerRequest,
+    mutationFn: registerUser,
     onSuccess: () => {
       console.log("created");
       toast.success("Account created successfully!");
@@ -61,7 +60,7 @@ export default function Register() {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-start pt-30 justify-center bg-linear-135 from-[#E8F5F3] via-[#FAF8F1] to-[#FDF6D8] lg:mb-5">
+    <div className="w-full min-h-screen flex items-start pt-30 justify-center bg-linear-135 from-[#E8F5F3] via-[#FAF8F1] to-[#FDF6D8] lg:mb-1">
       <div className="flex flex-col   items-center  px-6 sm:px-10 md:px-16 xl:px-20 gap-10 pb-10 pt-5 bg-white h-auto w-full max-w-170   shadow-xl rounded-xl ">
         <div className="flex flex-col gap-2 items-center justify-center  ">
           <Image

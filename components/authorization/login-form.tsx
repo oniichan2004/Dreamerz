@@ -13,14 +13,15 @@ import {
   type LoginFormValues,
 } from "@/schemas/authorization-schema";
 import { CircleAlert } from "lucide-react";
-import { login } from "@/api/requests";
 import { useMutation } from "@tanstack/react-query";
+import { useAuth } from "@/app/providers/auth-provider";
 import { toast } from "sonner";
-import { LoginPayload } from "@/api/types";
+import type { LoginPayload } from "@/api/types";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
   const router = useRouter();
+  const { login } = useAuth();
   const {
     register,
     handleSubmit,

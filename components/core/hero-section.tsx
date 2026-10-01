@@ -17,7 +17,7 @@ export default function Hero() {
         "
       />
 
-      <div className="relative flex flex-col items-center justify-center pt-36 sm:pt-28 md:pt-32 lg:flex-row lg:items-center lg:justify-center lg:gap-12 lg:px-16 lg:pt-32">
+      <div className="relative flex flex-col items-center justify-center pt-6 sm:pt-28 md:pt-2 lg:flex-row lg:items-center lg:justify-center lg:gap-12 lg:px-16 lg:pt-2">
         <div className="dz-wrap lg:order-2 lg:shrink-0">
           <DreamIntro />
         </div>

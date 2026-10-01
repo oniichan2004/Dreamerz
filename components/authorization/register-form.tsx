@@ -14,14 +14,14 @@ import {
   type RegisterFormValues,
 } from "@/schemas/authorization-schema";
 import { CircleAlert, CheckCircle2, Info } from "lucide-react";
-import { RegisterPayload } from "@/api/types";
 import { useMutation } from "@tanstack/react-query";
-import { register as registerRequest } from "@/api/requests";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { log } from "console";
+import { useAuth } from "@/app/providers/auth-provider";
+
 export default function Register() {
   const router = useRouter();
+  const { register: registerUser } = useAuth();
   const {
     register,
     handleSubmit,
@@ -45,9 +45,8 @@ export default function Register() {
   }));
 
   const registerMutation = useMutation({
-    mutationFn: registerRequest,
+    mutationFn: registerUser,
     onSuccess: () => {
-      console.log("created");
       toast.success("Account created successfully!");
       router.replace("/newsfeed");
     },

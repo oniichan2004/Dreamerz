@@ -13,14 +13,14 @@ import {
   type LoginFormValues,
 } from "@/schemas/authorization-schema";
 import { CircleAlert } from "lucide-react";
-import { login } from "@/api/requests";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { LoginPayload } from "@/api/types";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/app/providers/auth-provider";
 
 export default function Login() {
   const router = useRouter();
+  const { login } = useAuth();
   const {
     register,
     handleSubmit,
@@ -34,7 +34,7 @@ export default function Login() {
     },
   });
   const loginMutation = useMutation({
-    mutationFn: (payload: LoginPayload) => login(payload),
+    mutationFn: login,
     onSuccess: () => {
       router.replace("/newsfeed");
       toast.success("Welcome back");

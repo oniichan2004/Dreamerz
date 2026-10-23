@@ -13,7 +13,7 @@ import {
 } from "@/api/requests";
 import type { LoginPayload, RegisterPayload } from "@/api/types";
 import { setTokens, clearTokens, getAccessToken } from "@/lib/auth-tokens";
-
+import { refreshAccessToken } from "@/api/axios";
 interface AuthContextValue {
   isAuthenticated: boolean;
   isLoading: boolean;
@@ -29,16 +29,37 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const syncAuthState = () => {
-      setIsAuthenticated(!!getAccessToken());
-      setIsLoading(false);
+    const syncAuthState = async () => {
+      const accessToken = getAccessToken();
+
+      // Dacă avem accessToken, userul este logat
+      if (accessToken) {
+        setIsAuthenticated(true);
+        setIsLoading(false);
+        return;
+      }
+
+      // Dacă NU avem accessToken,
+      // încercăm să facem unul nou cu refreshToken
+      try {
+        await refreshAccessToken();
+
+        setIsAuthenticated(true);
+      } catch {
+        clearTokens();
+
+        setIsAuthenticated(false);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     syncAuthState();
 
-    window.addEventListener("storage", syncAuthState);
+    window.addEventListener("focus", syncAuthState);
+
     return () => {
-      window.removeEventListener("storage", syncAuthState);
+      window.removeEventListener("focus", syncAuthState);
     };
   }, []);
 

@@ -50,8 +50,8 @@ export default function Login() {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-start pt-30 justify-center bg-linear-135 from-[#E8F5F3] via-[#FAF8F1] to-[#FDF6D8] lg:mb-5">
-      <div className="flex flex-col   items-center  px-6 sm:px-10 md:px-16 xl:px-20 gap-10 pb-10 pt-5 bg-white h-auto w-full max-w-170   shadow-xl rounded-xl ">
+    <div className="w-full flex-1 flex items-center justify-center px-4 pt-24 pb-10 bg-linear-135 from-[#E8F5F3] via-[#FAF8F1] to-[#FDF6D8]">
+      <div className="flex flex-col   items-center mt-5  px-6 sm:px-10 md:px-16 xl:px-20 gap-10 pb-10 pt-5 bg-white h-auto w-full max-w-170   shadow-xl rounded-xl ">
         <div className="flex flex-col gap-2 items-center justify-center  ">
           <Image
             width={170}

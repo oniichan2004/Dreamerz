@@ -11,7 +11,7 @@ import { useAuth } from "@/app/providers/auth-provider";
 import { Input } from "../ui/input";
 import { Text } from "../ui/text";
 import { Search, Send, Bell } from "lucide-react";
-
+import ProfileSheet from "./profile-sheet";
 function AppHeader() {
   return (
     <header className="w-full bg-white">
@@ -63,6 +63,9 @@ function AppHeader() {
               </div>
             </div>
           </div>
+          <div className="relative h-11 w-11 overflow-hidden rounded-full">
+            <ProfileSheet />
+          </div>
         </div>
       </div>
       <div className="h-px w-full bg-[linear-gradient(90deg,#6FE7D8_0%,#79C8FF_25%,#C9A7FF_55%,#F2B6DE_70%,#FFE45C_85%,#FFE45C_100%)]" />
@@ -113,7 +116,19 @@ function GuestHeader() {
         }`}
       >
         <div className="text-white">
-          <Link href="/">
+          <Link
+            href="/"
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
             <Image
               src="/shooting-star.png"
               alt="Logo"

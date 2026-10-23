@@ -1,6 +1,11 @@
 import axios, { type InternalAxiosRequestConfig } from "axios";
 import type { RefreshResponse } from "./types";
-import { getAccessToken, getRefreshToken, setTokens, clearTokens } from "@/lib/auth-tokens";
+import {
+  getAccessToken,
+  getRefreshToken,
+  setTokens,
+  clearTokens,
+} from "@/lib/auth-tokens";
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 export const api = axios.create({
@@ -20,7 +25,7 @@ type RetriableRequestConfig = InternalAxiosRequestConfig & { _retry?: boolean };
 
 let refreshPromise: Promise<string> | null = null;
 
-const refreshAccessToken = async () => {
+export const refreshAccessToken = async () => {
   const refreshToken = getRefreshToken();
   if (!refreshToken) {
     throw new Error("No refresh token avalaible");
